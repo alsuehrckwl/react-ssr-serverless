@@ -45,10 +45,10 @@ export const themeInitialState: ThemeState = {
 
 export const reducer = (state: ThemeState, action: Action) => {
   switch (action.type) {
-    case 'openModal':
+    case 'change-theme':
       return {
         ...state,
-        modal: action.payload
+        mode: action.payload
       };
 
     default:
@@ -73,4 +73,4 @@ export function ThemeProvider(props: any) {
   );
 }
 
-export const ThemeStateValue = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext);
