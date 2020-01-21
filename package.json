@@ -1,0 +1,9 @@
+{
+  "name": "react-ssr-serverless",
+  "version": "1.0.0",
+  "description": "react server side rendering serverless",
+  "main": "index.js",
+  "repository": "https://github.com/alsuehrckwl/react-ssr-serverless.git",
+  "author": "alsuehrckwl",
+  "license": "MIT"
+}
