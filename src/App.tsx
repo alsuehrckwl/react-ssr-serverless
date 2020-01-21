@@ -1,21 +1,22 @@
 import React from 'react';
 import './App.css';
-import {
-  useTheme,
-  ThemeContext,
-  ThemeProvider,
-  themeInitialState
-} from './context/ThemeContext/ThemeContext';
+import { useTheme, ThemeProvider } from './context/ThemeContext/ThemeContext';
 import Layout from './layout/Layout';
-import Home from './pages/Home/Home';
+import Header from './layout/Header/Header';
+import { Router } from 'react-router';
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
 
 const App: React.FC = () => {
   const theme = useTheme();
 
   return (
     <ThemeProvider>
-      <Home />
-      <Layout />
+      <Router history={history}>
+        <Header />
+        <Layout />
+      </Router>
     </ThemeProvider>
   );
 };

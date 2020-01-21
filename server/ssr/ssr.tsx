@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StaticRouter, matchPath } from 'react-router-dom';
 import { renderToString } from 'react-dom/server';
-import Root from '../../src/common/Root';
 import routeConfig from '../../src/common/RouteConfig';
 import Helmet from 'react-helmet';
+import App from '../../src/App';
 
 export const renderApp = async (ctx) => {
   const { path, url } = ctx;
@@ -34,7 +34,7 @@ export const renderApp = async (ctx) => {
 
   const context = {};
   const app = (<StaticRouter context={context}>
-    <Root />
+    <App />
   </StaticRouter>)
   const html = renderToString(app);
   const helmet = Helmet.renderStatic();
