@@ -10,7 +10,7 @@ function getManifestPath() {
 
 function jsInclude() {
   let result = ''
-  
+
   manifest.entrypoints.forEach(item => {
     if (item.split('/')[1] === 'js') {
       result += `<script type="text/javascript" src="${getManifestPath()}${item}" async></script>`
@@ -21,11 +21,6 @@ function jsInclude() {
 }
 
 function buildHtml({ html, helmet, state }) {
-
-  const sss = jsInclude();
-
-  console.log(sss)
-
   const template = `<!DOCTYPE html>
       <html lang="ko" ${helmet.htmlAttributes.toString()}>
   
@@ -61,8 +56,6 @@ const render = async (ctx) => {
   try {
     const { html, helmet, context, state } = await renderApp(ctx);
 
-    console.log(html)
-
     const link = helmet && helmet.link.toComponent();
 
     if (context['status']) {
@@ -72,7 +65,6 @@ const render = async (ctx) => {
     ctx.body = body;
    
   } catch (e) {
-    console.log(e);
     if (e.response && e.response.status === 404) {
       ctx.status = 404;
       ctx.redirect('/404');

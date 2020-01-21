@@ -1,0 +1,15 @@
+{
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "jsxBracketSameLine": true,
+    "overrides": [
+        {
+            "files": "/.css",
+            "options": {
+                "tabWidth": 4
+            }
+        }
+    ]
+}
