@@ -1,8 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn start-ssr`
+
+Runs the serverless offline ssr server
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
+Need manifest and static files in server
+
+1. npm install -g http-server or yarn add -G http-server
+2. Run `yarn build`
+3. Go `build` folder. You can run `http-server`
+4. Run `yarn start-ssr` 
+
+### `yarn build-ssr`
+
+Runs the serverless application deploy your aws
 
 ### `yarn start`
 

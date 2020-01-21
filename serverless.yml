@@ -1,5 +1,5 @@
 service:
-  name: picksmatch-ssr
+  name: react-ssr-serverless
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -18,11 +18,10 @@ provider:
   name: aws
   runtime: nodejs8.10
   region: ap-northeast-2
-  stage: prod
-  # apiGateway:
-  #   minimumCompressionSize: 1024 # Enable gzip compression for responses > 1 KB
-  # environment:
-  #   AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+  stage: production
+  env:
+    NODE_ENV: production
+    SSR_ENV: production
 
 functions:
   app:
